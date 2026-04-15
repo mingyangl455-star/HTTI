@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTTI</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <section id="screen-intro">
+        <div class="htti-hero">
+          <div class="htti-letters" aria-label="HTTI">
+            <span class="htti-char">H</span>
+            <span class="htti-char">T</span>
+            <span class="htti-char">T</span>
+            <span class="htti-char">I</span>
+          </div>
+          <p class="htti-subline">测测你和HelloTalk谁最匹配？</p>
+        </div>
+        <div class="panel intro-panel">
+          <p class="intro-copy">
+            共 12 题，每题可选「是 / 否 / 不一定」。完成后先只看到关系标签，点按标签再揭晓对应的是谁、以及你与他的关系解读。
+          </p>
+          <p class="intro-tip">尽量按真实倾向选择；「不一定」选太多结果会变淡。</p>
+          <button type="button" id="btn-start" class="primary">开始</button>
+        </div>
+      </section>
+
+      <section id="screen-quiz" class="panel hidden">
+        <div id="progress-text"></div>
+        <p id="question-text"></p>
+        <div id="options"></div>
+        <p id="uncertain-warn" class="hidden">
+          你已选较多「不一定」，结果可能偏淡——如愿意可以回去改几题更有倾向的答案。
+        </p>
+        <div class="btn-row">
+          <button type="button" id="btn-back">上一题</button>
+          <button type="button" id="btn-next" class="primary" disabled>下一题</button>
+        </div>
+      </section>
+
+      <section id="screen-result" class="hidden">
+        <p class="result-lead">下面是几枚关系标签，点按一枚，查看对应的是谁、以及你与他的关系描述。</p>
+        <div id="result-cards"></div>
+        <p id="disclaimer"></p>
+        <div class="btn-row">
+          <button type="button" id="btn-retry">返回封面重测</button>
+        </div>
+      </section>
+
+      <footer>
+        配置见 <code>js/quiz-data.js</code> 与 <code>js/personas-data.js</code>
+      </footer>
+    </main>
+
+    <script src="js/quiz-data.js"></script>
+    <script src="js/personas-data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
